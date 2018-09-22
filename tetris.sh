@@ -1,4 +1,4 @@
-#!/bin/bash
+#printf '\e]710;%s\007' "9x15bold,xft:Kochi Gothici!/bin/bash
 
 # Tetris game written in pure bash
 #
@@ -79,7 +79,7 @@ LEVEL_UP=20
 
 colors=($RED $GREEN $YELLOW $BLUE $FUCHSIA $CYAN $WHITE)
 
-no_color=true    # do we use color or not
+no_color=false    # do we use color or not
 showtime=true    # controller runs while this flag is true
 empty_cell=" ."  # how we draw empty cell
 filled_cell="[]" # how we draw filled cell
@@ -186,7 +186,7 @@ help=(
 "h: toggle this help"
 )
 
-help_on=-1 # if this flag is 1 help is shown
+help_on=0 # if this flag is 1 help is shown
 
 toggle_help() {
     local i s
