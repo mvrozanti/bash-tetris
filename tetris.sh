@@ -376,9 +376,9 @@ reader() {
     trap '' SIGUSR1   # SIGUSR1 is ignored
     local -u key a='' b='' cmd esc_ch=$'\x1b'
     # commands is associative array, which maps pressed keys to commands, sent to controller
-    declare -A commands=([A]=$ROTATE [B]=$DOWN [C]=$RIGHT [D]=$LEFT
+    declare -A commands=([_K]=$ROTATE [_J]=$DOWN [_L]=$RIGHT [_H]=$LEFT
         [_S]=$ROTATE [_A]=$LEFT [_D]=$RIGHT
-        [_]=$DROP [_Q]=$QUIT [_H]=$TOGGLE_HELP [_N]=$TOGGLE_NEXT [_C]=$TOGGLE_COLOR)
+        [_]=$DROP [_Q]=$QUIT [_?]=$TOGGLE_HELP [_N]=$TOGGLE_NEXT [_C]=$TOGGLE_COLOR)
 
     while read -s -n 1 key ; do
         case "$a$b$key" in
